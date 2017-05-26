@@ -1,7 +1,8 @@
 centos-7:
   script:
     - cd kitchen/centos-7
-    - sudo docker login -u gitlab-ci-tocken -p $CI_BUILD_TOKEN registry.ocf.co.uk
+    - echo 
+    - sudo docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.ocf.co.uk
     - sudo docker build -t registry.ocf.co.uk/salt/docker/centos-7-kitchen .
     - sudo docker push registry.ocf.co.uk/salt/docker/centos-7-kitchen:latest
   only:
@@ -10,7 +11,7 @@ centos-7:
 centos-6:
   script:
     - cd kitchen/centos-6
-    - sudo docker login -u gitlab-ci-tocken -p $CI_BUILD_TOKEN registry.ocf.co.uk
+    - sudo docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.ocf.co.uk
     - sudo docker build -t registry.ocf.co.uk/salt/docker/centos-6-kitchen .
     - sudo docker push registry.ocf.co.uk/salt/docker/centos-6-kitchen:latest
   only:
@@ -19,7 +20,7 @@ centos-6:
 ubuntu-1604:
   script:
     - cd kitchen/ubuntu-16.04
-    - sudo docker login -u gitlab-ci-tocken -p $CI_BUILD_TOKEN registry.ocf.co.uk
+    - sudo docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.ocf.co.uk
     - sudo docker build -t registry.ocf.co.uk/salt/docker/ubuntu-16.04-kitchen .
     - sudo docker push registry.ocf.co.uk/salt/docker/ubuntu-16.04-kitchen:latest
   only:
